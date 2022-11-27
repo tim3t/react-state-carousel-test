@@ -6,6 +6,11 @@ it('renders without exploding', function() {
 	render(<Carousel />);
 });
 
+test('if it matches snapshot', function() {
+	const { asFragment } = render(<Carousel />);
+	expect(asFragment()).toMatchSnapshot();
+});
+
 it('works when you click on the right arrow', function() {
 	const { queryByTestId, queryByAltText } = render(<Carousel />);
 
